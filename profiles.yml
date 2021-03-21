@@ -1,0 +1,13 @@
+dbt-tutorial: # this needs to match the profile: in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /Users/toddhendricks/.dbt/dbt-user-creds.json # replace this with the full path to your keyfile
+      project: toddtest-308200 # Replace this with your project id
+      dataset: toddhendricks # Replace this with dbt_your_name, e.g. dbt_bob
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
